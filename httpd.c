@@ -17,7 +17,7 @@
 
 
 
-#define SERVER_STRING "SERVICE:TJQ's http/0.1.0\r\n"//定义个人server名称
+#define SERVER_STRING "SERVICE:tjq's http/0.1.0\r\n"//定义个人server名称
 
 
 void *accept_request(void* client);
