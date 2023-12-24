@@ -257,11 +257,6 @@ void execute_cgi(int client, const char *path,
 		  cannot_execute(client);
 		  return;
 	 }
-	 if (pipe(cgi_input) < 0) { 
-		  cannot_execute(client);
-		  return;
-	 }
-
 	 if ( (pid = fork()) < 0 ) {
 		  cannot_execute(client);
 		  return;
@@ -412,7 +407,7 @@ void not_found(int client)
 //如果不是CGI文件，也就是静态文件，直接读取文件返回给请求的http客户端即可
 void serve_file(int client, const char *filename)
 {
-	 FILE *resource = NULL;
+	 #if 0
 	 int numchars = 1;
 	 char buf[1024];
 	 buf[0] = 'A'; 
@@ -421,8 +416,9 @@ void serve_file(int client, const char *filename)
 	 {
 		 numchars = get_line(client, buf, sizeof(buf));
 	 }
-	
+	#endif
 	 //打开文件
+	 FILE *resource = NULL;
 	 resource = fopen(filename, "r");
 	 if (resource == NULL)
 	  not_found(client);

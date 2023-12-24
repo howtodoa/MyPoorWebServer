@@ -1,7 +1,7 @@
 all: myhttp
 
-myhttp: httpd.c
-	gcc -W -Wall -o myhttp httpd.c -lpthread
+myhttp: httpd.cc
+	g++ -std=c++17 -o myhttp httpd.cc -lpthread
 
 clean:
 	rm myhttp
