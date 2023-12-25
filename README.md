@@ -39,7 +39,7 @@ sudo chmod +X post.cgi
 
 #### 2、编译执行
 
-依次输入下述命令即可。
+输入下述命令即可。
 
 sh run.sh
 
